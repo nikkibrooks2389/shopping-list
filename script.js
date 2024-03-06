@@ -35,6 +35,9 @@ const onAddItemSubmit = (e) => {
 
         //exit edit mode
         isEditMode = false;
+    } else if (checkIfItemExists(newItem)) {
+        alert('Item already exists');
+        return;
     }
 
     // create item DOM element
@@ -101,7 +104,12 @@ const onClickItem = (e) => {
     } else {
         setItemToEdit(e.target);
     }
+}
 
+const checkIfItemExists = (item) => {
+    const itemsFromStorage = getItemsFromStorage();
+
+    return itemsFromStorage.includes(item);
 }
 
 const setItemToEdit = (item) => {
