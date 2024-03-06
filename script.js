@@ -11,6 +11,7 @@ const addItem = (e) => {
         alert('Please enter an item');
         return;
     }
+
     //create new list item
     const li = document.createElement('li');
     li.appendChild(document.createTextNode(newItem));
